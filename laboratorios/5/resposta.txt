@@ -1,0 +1,5 @@
+Cliente - Client2
+Comando - Command
+ComandoConcreto - CommandImpl
+Executor - Invoker
+Receptor - GradeServer
