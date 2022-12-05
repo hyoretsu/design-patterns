@@ -1,4 +1,9 @@
-import Entity from "../../../shared/entities/Entity";
+import Entity from "../../../../shared/infra/entities/Entity";
+
+interface ICreateFriendshipDTO {
+    friendId: string;
+    userId: string;
+}
 
 export default class Friendship extends Entity {
     private _userId: string;

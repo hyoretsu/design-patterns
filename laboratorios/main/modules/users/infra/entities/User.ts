@@ -1,4 +1,4 @@
-import Entity from "../../../shared/entities/Entity";
+import Entity from "../../../../shared/infra/entities/Entity";
 
 export interface ICreateUserDTO {
     login: string;

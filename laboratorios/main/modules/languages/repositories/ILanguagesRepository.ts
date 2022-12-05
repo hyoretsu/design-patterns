@@ -1,6 +1,6 @@
-import User from "../entities/User";
+import Language from "../infra/entities/Language";
 
-export default interface IUsersRepository {
-    findById(userId: string): Promise<User | undefined>;
-    save(user: User): Promise<void>;
+export default interface ILanguagesRepository {
+    findById(languageId: string): Promise<Language | undefined>;
+    save(language: Language): Promise<void>;
 }

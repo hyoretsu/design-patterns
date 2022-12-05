@@ -1,11 +1,17 @@
-import Entity from "../../../shared/entities/Entity";
+import Entity from "../../../../shared/infra/entities/Entity";
+
+interface ICreateLanguageDTO {
+    description: string;
+    name: string;
+    icon: string;
+}
 
 export default class Language extends Entity {
     private _name: string;
     private _description: string;
     private _icon: string;
 
-    constructor({ description, name, icon }) {
+    constructor({ description, name, icon }: ICreateLanguageDTO) {
         super();
         this._description = description;
         this._name = name;

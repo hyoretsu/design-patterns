@@ -1,6 +1,5 @@
-import { randomId } from "@hyoretsu/shared.utils";
-
-import User, { ICreateUserDTO } from "../entities/User";
+import User, { ICreateUserDTO } from "../infra/entities/User";
+import UserCreator from "../infra/entities/UserCreator";
 import IUsersRepository from "../repositories/IUsersRepository";
 
 export default class CreateUserService {
@@ -27,7 +26,7 @@ export default class CreateUserService {
             throw new Error("A senha deve conter pelo menos 2 números.");
         }
 
-        const user = new User({ login, nickname, password });
+        const user = new UserCreator().createEntity({ login, nickname, password });
 
         await this.usersRepository.save(user);
 
