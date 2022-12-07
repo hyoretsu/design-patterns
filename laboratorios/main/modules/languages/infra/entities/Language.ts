@@ -1,6 +1,6 @@
 import Entity from "../../../../shared/infra/entities/Entity";
 
-interface ICreateLanguageDTO {
+export interface ICreateLanguageDTO {
     description: string;
     name: string;
     icon: string;
