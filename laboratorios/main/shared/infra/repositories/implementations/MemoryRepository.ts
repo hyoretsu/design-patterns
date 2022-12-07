@@ -1,6 +1,6 @@
 export default class MemoryRepository {
     private static instance: MemoryRepository;
-    private entities: Record<string, any[]> = {};
+    private entities: Record<string, Record<string, any>> = {};
 
     public static getInstance() {
         if (!this.instance) {

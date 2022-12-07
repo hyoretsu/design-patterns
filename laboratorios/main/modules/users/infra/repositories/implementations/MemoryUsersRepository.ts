@@ -3,7 +3,7 @@ import User from "../../entities/User";
 import IUsersRepository from "../IUsersRepository";
 
 export default class MemoryUsersRepository implements IUsersRepository {
-    private users: User[];
+    private users: Record<string, User>;
 
     constructor() {
         const memoryRepository = MemoryRepository.getInstance();
@@ -11,12 +11,12 @@ export default class MemoryUsersRepository implements IUsersRepository {
     }
 
     public async findById(userId: string): Promise<User | undefined> {
-        const foundUser = this.users.find(user => user.id === userId);
+        const [_, foundUser] = Object.entries(this.users).find(([id, user]) => id === userId) || [];
 
         return foundUser;
     }
 
     public async save(user: User): Promise<void> {
-        this.users.push(user);
+        this.users[user.id] = user;
     }
 }

@@ -3,7 +3,7 @@ import Language from "../../entities/Language";
 import ILanguagesRepository from "../ILanguagesRepository";
 
 export default class MemoryLanguagesRepository implements ILanguagesRepository {
-    private languages: Language[];
+    private languages: Record<string, Language>;
 
     constructor() {
         const memoryRepository = MemoryRepository.getInstance();
@@ -11,12 +11,12 @@ export default class MemoryLanguagesRepository implements ILanguagesRepository {
     }
 
     public async findById(languageId: string): Promise<Language | undefined> {
-        const foundLanguage = this.languages.find(language => language.id === languageId);
+        const [_, foundLanguage] = Object.entries(this.languages).find(([id, language]) => id === languageId) || [];
 
         return foundLanguage;
     }
 
     public async save(language: Language): Promise<void> {
-        this.languages.push(language);
+        this.languages[language.id] = language;
     }
 }
