@@ -1,5 +1,5 @@
 import Language from "../../infra/entities/Language";
-import LanguageCreator from "../../infra/entities/LanguageCreator";
+import LanguageCreator from "../../infra/entities/creators/LanguageCreator";
 import ILanguagesRepository from "../../infra/repositories/ILanguagesRepository";
 
 export default class CreateLanguageService {
