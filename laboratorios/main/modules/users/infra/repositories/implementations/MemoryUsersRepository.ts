@@ -1,5 +1,5 @@
-import MemoryRepository from "../../../../shared/repositories/implementations/MemoryRepository";
-import User from "../../infra/entities/User";
+import MemoryRepository from "../../../../../shared/infra/repositories/implementations/MemoryRepository";
+import User from "../../entities/User";
 import IUsersRepository from "../IUsersRepository";
 
 export default class MemoryUsersRepository implements IUsersRepository {

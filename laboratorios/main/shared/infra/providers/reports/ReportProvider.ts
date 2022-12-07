@@ -1,4 +1,4 @@
-import Entity from "../../infra/entities/Entity";
+import Entity from "../../entities/Entity";
 
 export default abstract class ReportProvider {
     public async generateReport(id: string): Promise<string | Buffer> {

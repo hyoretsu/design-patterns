@@ -1,6 +1,6 @@
-import User, { ICreateUserDTO } from "../infra/entities/User";
-import UserCreator from "../infra/entities/UserCreator";
-import IUsersRepository from "../repositories/IUsersRepository";
+import User, { ICreateUserDTO } from "../../infra/entities/User";
+import UserCreator from "../../infra/entities/UserCreator";
+import IUsersRepository from "../../infra/repositories/IUsersRepository";
 
 export default class CreateUserService {
     constructor(private usersRepository: IUsersRepository) {}

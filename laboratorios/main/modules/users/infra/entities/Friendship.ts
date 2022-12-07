@@ -1,6 +1,6 @@
 import Entity from "../../../../shared/infra/entities/Entity";
 
-interface ICreateFriendshipDTO {
+export interface ICreateFriendshipDTO {
     friendId: string;
     userId: string;
 }

@@ -1,5 +1,5 @@
-import MemoryRepository from "../../../../shared/repositories/implementations/MemoryRepository";
-import Language from "../../infra/entities/Language";
+import MemoryRepository from "../../../../../shared/infra/repositories/implementations/MemoryRepository";
+import Language from "../../entities/Language";
 import ILanguagesRepository from "../ILanguagesRepository";
 
 export default class MemoryLanguagesRepository implements ILanguagesRepository {

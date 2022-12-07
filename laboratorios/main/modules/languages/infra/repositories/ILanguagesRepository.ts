@@ -1,4 +1,4 @@
-import Language from "../infra/entities/Language";
+import Language from "../entities/Language";
 
 export default interface ILanguagesRepository {
     findById(languageId: string): Promise<Language | undefined>;
