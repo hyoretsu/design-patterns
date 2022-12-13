@@ -11,6 +11,6 @@ export default class MemoryRepository {
     }
 
     getRepository(entityName: string) {
-        return this.entities[entityName];
+        return this.entities[entityName] || {};
     }
 }

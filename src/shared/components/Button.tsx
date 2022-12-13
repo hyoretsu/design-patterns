@@ -16,7 +16,7 @@ export default class Button {
 
     render() {
         return (
-            <button type="button" onSubmit={this.command}>
+            <button type="button" onClick={this.command.execute}>
                 {this.text}
             </button>
         );
