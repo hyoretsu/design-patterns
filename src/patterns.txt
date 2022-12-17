@@ -1,0 +1,42 @@
+Proxy (Remover a senha de um usuário, informação sensível)
+- Passwordless
+
+Chain of Responsibility (Certificar que o usuário está logado para criar uma amizade)
+- ensureAuthenticated
+- CreateCommand
+
+Command (Habilitar com mais facilidade o Memento)
+- CreateCommand
+
+Memento (Desfazer alterações nas classes)
+- CreateCommand
+
+Singleton (Melhorar o desempenho ao manter uma única ligação ao DB)
+- MemoryRepository
+
+Facade (Facilitar o uso do DB)
+- MemoryLanguagesRepository
+- MemoryUsersRepository
+
+Factory
+- Creator
+- FriendshipCreator
+- LanguageCreator
+- UserCreator
+
+Template Method (Permitir a geração de vários tipos de, no caso, relatórios)
+- ReportProvider
+- UsersReportProvider
+- UsersHTMLReportProvider
+- UsersPDFReportProvider
+
+Adapter (Importar linguagens ou até mesmo usuários com XML)
+- XMLToJSON
+
+Nada
+- CreateLanguageService
+- CreateUserService
+- Entity
+- Friendship
+- Language
+- User
