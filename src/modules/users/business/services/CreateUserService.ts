@@ -1,3 +1,5 @@
+import Passwordless from "@shared/infra/entities/Passwordless";
+
 import User, { ICreateUserDTO } from "../../infra/entities/User";
 import UserCreator from "../../infra/entities/creators/UserCreator";
 import IUsersRepository from "../../infra/repositories/IUsersRepository";
@@ -30,6 +32,6 @@ export default class CreateUserService {
 
         await this.usersRepository.save(user);
 
-        return user;
+        return new Passwordless(user) as User;
     }
 }
