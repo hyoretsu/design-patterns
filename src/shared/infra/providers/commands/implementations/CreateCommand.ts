@@ -1,14 +1,23 @@
 import { capitalize } from "@hyoretsu/shared.utils";
 
+import EnsureAuthenticated from "@shared/infra/middlewares/EnsureAuthenticated";
+
 import Entity from "../../../entities/Entity";
 import ICommand from "../ICommand";
 
 export default class CreateCommand implements ICommand {
     private snapshots: Record<string, Entity>;
 
-    constructor(private module: string) {}
+    constructor(private module: string, private needsAuthentication = false) {}
+
+    async middlewares(info: Record<string, any>): Promise<void> {
+        // Seria usado, por exemplo, para criar uma amizade
+        if (this.needsAuthentication) EnsureAuthenticated.execute(info.req);
+    }
 
     async execute(info: Record<string, any>): Promise<void> {
+        this.middlewares(info);
+
         const CreateService = await import(
             `../../../../modules/${this.module}/business/services/Create${capitalize(this.module.slice(0, -1))}Service`
         );
